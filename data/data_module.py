@@ -18,4 +18,4 @@ class TennisKeypointsDataModule(pl.LightningDataModule):
         return self.train_dl
     
     def val_dataloader(self):
-        return self.train_dl
+        return self.val_dl
