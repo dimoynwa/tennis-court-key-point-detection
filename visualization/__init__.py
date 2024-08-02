@@ -12,7 +12,7 @@ def draw_tensor(img_data: torch.Tensor, keypoints: torch.Tensor, conf_threshold=
         unnorm = UnNormalize()
         img_data = unnorm(img_data) # (3, 480, 480)
     
-    img = img_data.permute(1, 2, 0).numpy() # (480, 480, 3)
+    img = img_data.permute(1, 2, 0).cpu().numpy() # (480, 480, 3)
     img = img * 255 
 
     img = np.ascontiguousarray(img, dtype=np.uint8)
